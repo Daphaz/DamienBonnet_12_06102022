@@ -1,0 +1,48 @@
+.header {
+  @extend %between;
+  height: 91px;
+  width: 100%;
+  padding: 20px 30px;
+  background-color: $clr-black;
+  color: $clr-white;
+  box-shadow: $bs-medium;
+
+  &__logo {
+    flex-shrink: 0;
+    img {
+      width: 100%;
+      max-width: 178px;
+      transition: 0.3s ease;
+    }
+    margin-right: 150px;
+    transition: 0.3s ease;
+
+    @include lg {
+      margin-right: 100px;
+    }
+    @include md {
+      margin-right: 60px;
+      img {
+        max-width: 120px;
+      }
+    }
+    @include sm {
+      margin-right: 20px;
+      img {
+        max-width: 90px;
+      }
+    }
+  }
+
+  &__nav {
+    flex-grow: 1;
+    ul {
+      @extend %between;
+      width: 100%;
+    }
+
+    a {
+      @extend %title-24;
+    }
+  }
+}

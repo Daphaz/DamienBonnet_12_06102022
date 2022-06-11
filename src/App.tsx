@@ -1,5 +1,5 @@
-function App() {
-  return <div className='App'>App</div>;
-}
+import { Root } from '@/components/root';
 
-export default App;
+export const App = () => {
+  return <Root />;
+};

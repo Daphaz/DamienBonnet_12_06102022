@@ -1,0 +1,47 @@
+.sidebar {
+  position: relative;
+  @extend %center;
+  flex-direction: column;
+  flex-shrink: 0;
+  height: calc(100vh - 91px);
+  width: 117px;
+  background-color: $clr-black;
+  color: $clr-white;
+  padding: 60px 20px;
+  z-index: -1;
+  box-shadow: $bs-medium;
+
+  &__nav {
+    @extend %align;
+    flex-wrap: wrap;
+    margin-bottom: 120px;
+
+    li {
+      @extend %center;
+      width: 64px;
+      height: 64px;
+      border-radius: 6px;
+      background-color: $clr-white;
+      img {
+        flex-shrink: 0;
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  &__copy {
+    position: absolute;
+    bottom: 50px;
+    span {
+      position: absolute;
+      @extend %desc-12;
+      transform-origin: 0% 0%;
+      transform: rotate(-90deg) translateY(-50%);
+      width: 140px;
+      word-break: keep-all;
+    }
+  }
+}
