@@ -1,5 +1,5 @@
-import { Layout } from '@/components/layout';
+import { DashboardTemplate } from '@/components/templates';
 
 export const Dashboard = () => {
-  return <Layout>test de main</Layout>;
+  return <DashboardTemplate />;
 };
