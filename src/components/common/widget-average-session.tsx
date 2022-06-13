@@ -1,8 +1,5 @@
-import { usersService } from '@/api/users.service';
-import { Average } from '@/ts';
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import {
-  Legend,
   Line,
   LineChart,
   ResponsiveContainer,
@@ -15,6 +12,9 @@ import {
   NameType,
   ValueType,
 } from 'recharts/types/component/DefaultTooltipContent';
+
+import { usersService } from '@/api/users.service';
+import { Average } from '@/ts';
 
 const CustomTooltip = ({
   active,
@@ -31,21 +31,6 @@ const CustomTooltip = ({
   }
 
   return null;
-};
-
-const CustomizedDot = (props: { cx: number; cy: number }) => {
-  const { cx, cy } = props;
-  console.log(props);
-  return (
-    <circle
-      cx={cx - 10}
-      cy={cy - 10}
-      r={25}
-      stroke='black'
-      strokeWidth={3}
-      fill='red'
-    />
-  );
 };
 
 export const AverageSession = () => {

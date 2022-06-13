@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { usersService } from '@/api/users.service';
 import { User } from '@/ts';
 
-import { WidgetActivity, AverageSession } from '../common';
+import { AverageSession, TodayScore, WidgetActivity } from '../common';
 import { Layout } from '../layout';
 
 export const DashboardTemplate = () => {
@@ -40,6 +40,7 @@ export const DashboardTemplate = () => {
 
           <div className='dashboard__row'>
             <AverageSession />
+            {user?.score && <TodayScore score={user.score} />}
           </div>
         </div>
 
