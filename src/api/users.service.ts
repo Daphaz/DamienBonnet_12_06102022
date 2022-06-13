@@ -1,4 +1,4 @@
-import { User } from '@/ts';
+import { Activity, User } from '@/ts';
 
 import api from './api';
 
@@ -12,7 +12,7 @@ const urls = {
 };
 
 const getById = async (): Promise<User> => api.get(urls.getById);
-const getActivity = async () => api.get(urls.getActivity);
+const getActivity = async (): Promise<Activity> => api.get(urls.getActivity);
 const getAverageSessions = async () => api.get(urls.getAverageSessions);
 const getPerformance = async () => api.get(urls.getPerformance);
 
