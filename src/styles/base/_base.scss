@@ -33,7 +33,7 @@ body {
   flex: 1 1;
   padding: 68px 100px 88px;
   transition: all 0.3s ease;
-  background-color: lightblue;
+  background-color: $clr-white;
 
   @include xl {
     padding: 48px 80px 68px;
