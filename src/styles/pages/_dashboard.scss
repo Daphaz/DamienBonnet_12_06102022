@@ -9,8 +9,21 @@
   }
 
   &__subtitle {
-    @extend %title-24;
-    font-weight: 400;
+    @extend %desc-18;
     margin-bottom: 77px;
+  }
+
+  &__grid {
+    @extend %flex;
+    column-gap: 31px;
+  }
+
+  &__left {
+    flex-grow: 1;
+  }
+
+  &__right {
+    flex-shrink: 0;
+    min-width: 258px;
   }
 }

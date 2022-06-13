@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { usersService } from '@/api/users.service';
 import { User } from '@/ts';
 
+import { WidgetActivity } from '../common';
 import { Layout } from '../layout';
 
 export const DashboardTemplate = () => {
@@ -32,6 +33,14 @@ export const DashboardTemplate = () => {
       <p className='dashboard__subtitle'>
         Félicitation ! Vous avez explosé vos objectifs hier 👏
       </p>
+
+      <div className='dashboard__grid'>
+        <div className='dashboard__left'>
+          <WidgetActivity />
+        </div>
+
+        <div className='dashboard__right'></div>
+      </div>
     </Layout>
   );
 };
