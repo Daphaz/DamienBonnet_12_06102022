@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { usersService } from '@/api/users.service';
 import { User } from '@/ts';
 
-import { WidgetActivity } from '../common';
+import { WidgetActivity, AverageSession } from '../common';
 import { Layout } from '../layout';
 
 export const DashboardTemplate = () => {
@@ -37,6 +37,10 @@ export const DashboardTemplate = () => {
       <div className='dashboard__grid'>
         <div className='dashboard__left'>
           <WidgetActivity />
+
+          <div className='dashboard__row'>
+            <AverageSession />
+          </div>
         </div>
 
         <div className='dashboard__right'></div>

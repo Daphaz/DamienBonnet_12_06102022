@@ -1,0 +1,71 @@
+.widget-average {
+  position: relative;
+  border-radius: $rad;
+  background-color: $clr-primary;
+  color: $clr-white;
+  overflow: hidden;
+  box-shadow: $bs-card;
+  padding: 29px 34px 0;
+  @include xl {
+    padding: 14px 18px 0;
+  }
+
+  &__legend,
+  &__error {
+    @extend %desc-15;
+    line-height: 1.6;
+    opacity: 0.5;
+    @include xl {
+      font-size: 12px;
+    }
+  }
+
+  &__error {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__chart {
+    @extend %fit;
+
+    .label-x {
+      position: absolute;
+      bottom: 20px;
+      left: 0;
+      right: 0;
+      width: 100%;
+      user-select: none;
+      @extend %between;
+      padding: 0 14px;
+      z-index: 2;
+      color: $clr-white;
+      @include xl {
+        bottom: 14px;
+        padding: 0 12px;
+      }
+
+      p {
+        @extend %desc-15;
+        opacity: 0.5;
+        @include xl {
+          font-size: 1.2rem;
+        }
+      }
+    }
+
+    .custom-tooltip {
+      @extend %center;
+      background-color: $clr-white;
+      min-width: 39px;
+      height: 25px;
+
+      p {
+        font-weight: 500;
+        font-size: 8px;
+        color: $clr-black;
+      }
+    }
+  }
+}

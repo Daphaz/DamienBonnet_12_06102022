@@ -11,6 +11,9 @@
   &__subtitle {
     @extend %desc-18;
     margin-bottom: 77px;
+    @include xl {
+      margin-bottom: 32px;
+    }
   }
 
   &__grid {
@@ -20,10 +23,25 @@
 
   &__left {
     flex-grow: 1;
+    max-width: 835px;
+  }
+
+  &__row {
+    width: 100%;
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 30px;
+    height: 263px;
+    margin-top: 30px;
+    @include xl {
+      height: 180px;
+    }
   }
 
   &__right {
     flex-shrink: 0;
-    min-width: 258px;
+    width: 258px;
+    background-color: lightcoral;
   }
 }
