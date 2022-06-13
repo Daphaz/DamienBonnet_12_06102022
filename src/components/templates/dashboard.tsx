@@ -1,11 +1,14 @@
-import { usersService } from '@/api/users.service';
 import { useEffect } from 'react';
 import { useCallback } from 'react';
 import { useState } from 'react';
+
+import { usersService } from '@/api/users.service';
+import { User } from '@/ts';
+
 import { Layout } from '../layout';
 
 export const DashboardTemplate = () => {
-  const [user, setUser] = useState<any | undefined>(undefined);
+  const [user, setUser] = useState<User | undefined>(undefined);
 
   const fetchUser = useCallback(async () => {
     try {
@@ -23,7 +26,12 @@ export const DashboardTemplate = () => {
 
   return (
     <Layout>
-      <pre>{JSON.stringify(user)}</pre>
+      <h1 className='dashboard__title'>
+        Bonjour&nbsp;<span>{user && user.userInfos.firstName}</span>
+      </h1>
+      <p className='dashboard__subtitle'>
+        Félicitation ! Vous avez explosé vos objectifs hier 👏
+      </p>
     </Layout>
   );
 };

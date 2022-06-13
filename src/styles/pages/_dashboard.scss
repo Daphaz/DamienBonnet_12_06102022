@@ -1,0 +1,16 @@
+.dashboard {
+  &__title {
+    @extend %title-48;
+    margin-bottom: 40px;
+
+    span {
+      color: $clr-primary;
+    }
+  }
+
+  &__subtitle {
+    @extend %title-24;
+    font-weight: 400;
+    margin-bottom: 77px;
+  }
+}
