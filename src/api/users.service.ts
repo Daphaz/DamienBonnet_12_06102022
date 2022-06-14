@@ -1,4 +1,4 @@
-import { Activity, Average, User } from '@/ts';
+import { Activity, Average, Performance, User } from '@/ts';
 
 import api from './api';
 
@@ -15,7 +15,8 @@ const getById = async (): Promise<User> => api.get(urls.getById);
 const getActivity = async (): Promise<Activity> => api.get(urls.getActivity);
 const getAverageSessions = async (): Promise<Average> =>
   api.get(urls.getAverageSessions);
-const getPerformance = async () => api.get(urls.getPerformance);
+const getPerformance = async (): Promise<Performance> =>
+  api.get(urls.getPerformance);
 
 export const usersService = {
   getById,
