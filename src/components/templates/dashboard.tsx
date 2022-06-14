@@ -5,7 +5,12 @@ import { useState } from 'react';
 import { usersService } from '@/api/users.service';
 import { User } from '@/ts';
 
-import { AverageSession, TodayScore, WidgetActivity } from '../common';
+import {
+  WidgetActivity,
+  WidgetAverageSession,
+  WidgetPerformance,
+  WidgetTodayScore,
+} from '../common';
 import { Layout } from '../layout';
 
 export const DashboardTemplate = () => {
@@ -39,8 +44,9 @@ export const DashboardTemplate = () => {
           <WidgetActivity />
 
           <div className='dashboard__row'>
-            <AverageSession />
-            {user?.score && <TodayScore score={user.score} />}
+            <WidgetAverageSession />
+            <WidgetPerformance />
+            {user?.score && <WidgetTodayScore score={user.score} />}
           </div>
         </div>
 

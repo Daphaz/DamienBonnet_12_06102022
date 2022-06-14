@@ -4,7 +4,7 @@ interface TodayScoreProps {
   score: number;
 }
 
-export const TodayScore = ({ score }: TodayScoreProps) => {
+export const WidgetTodayScore = ({ score }: TodayScoreProps) => {
   return (
     <div className='widget-today-score'>
       <p className='widget-today-score__label'>Score</p>

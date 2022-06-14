@@ -33,7 +33,7 @@ const CustomTooltip = ({
   return null;
 };
 
-export const AverageSession = () => {
+export const WidgetAverageSession = () => {
   const [averageSessions, setAverageSessions] = useState<Average | undefined>(
     undefined
   );
