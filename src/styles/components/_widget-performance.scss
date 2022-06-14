@@ -1,0 +1,22 @@
+.widget-performance {
+  @extend %center;
+  background-color: $clr-grey-700;
+  color: $clr-white;
+  border-radius: $rad;
+  box-shadow: $bs-card;
+
+  &__chart {
+    flex-grow: 1;
+
+    .recharts-polar-angle-axis-tick-value {
+      tspan {
+        @extend %desc-12;
+
+        @include xl {
+          font-size: 1rem;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}
