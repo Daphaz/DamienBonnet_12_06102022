@@ -2,10 +2,14 @@ import { useEffect } from 'react';
 import { useCallback } from 'react';
 import { useState } from 'react';
 
+import { formatNumberLocalFr } from '@/lib/utils';
+
 import { usersService } from '@/api/users.service';
-import { User } from '@/ts';
+import { KeyDataType, User } from '@/ts';
 
 import {
+  KeyDataItemProps,
+  ListKeyData,
   WidgetActivity,
   WidgetAverageSession,
   WidgetPerformance,
@@ -30,6 +34,69 @@ export const DashboardTemplate = () => {
     fetchUser();
   }, [fetchUser]);
 
+  const getContent = (
+    property: keyof KeyDataType,
+    value: number
+  ): Pick<KeyDataItemProps, 'title' | 'color' | 'subtitle'> => {
+    switch (property) {
+      case 'calorieCount':
+        return {
+          title: `${formatNumberLocalFr(value)} kCal`,
+          subtitle: 'Calories',
+          color: 'primary',
+        };
+      case 'proteinCount':
+        return {
+          title: formatNumberLocalFr(value, {
+            style: 'unit',
+            unit: 'gram',
+          }),
+          subtitle: 'Proteines',
+          color: 'blue',
+        };
+      case 'carbohydrateCount':
+        return {
+          title: formatNumberLocalFr(value, {
+            style: 'unit',
+            unit: 'gram',
+          }),
+          subtitle: 'Gluicides',
+          color: 'yellow',
+        };
+      case 'lipidCount':
+        return {
+          title: formatNumberLocalFr(value, {
+            style: 'unit',
+            unit: 'gram',
+          }),
+          subtitle: 'Lipides',
+          color: 'pink',
+        };
+
+      default:
+        return {
+          title: '',
+          subtitle: '',
+        };
+    }
+  };
+
+  const formatKeyData = (object: KeyDataType): KeyDataItemProps[] => {
+    const datas: KeyDataItemProps[] = [];
+
+    for (const property in object) {
+      const value = object[property as keyof KeyDataType];
+
+      datas.push({
+        iconSrc: `/svg/icon-${property}.svg`,
+        name: property,
+        ...(getContent(property as keyof KeyDataType, value) || {}),
+      });
+    }
+
+    return datas;
+  };
+
   return (
     <Layout>
       <h1 className='dashboard__title'>
@@ -50,7 +117,13 @@ export const DashboardTemplate = () => {
           </div>
         </div>
 
-        <div className='dashboard__right'></div>
+        <div className='dashboard__right'>
+          {user?.keyData ? (
+            <ListKeyData items={formatKeyData(user.keyData)} />
+          ) : (
+            <p>pas de données pour l'instant</p>
+          )}
+        </div>
       </div>
     </Layout>
   );
