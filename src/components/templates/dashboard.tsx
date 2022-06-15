@@ -1,11 +1,4 @@
-import { useEffect } from 'react';
-import { useCallback } from 'react';
-import { useState } from 'react';
-
 import { formatNumberLocalFr } from '@/lib/utils';
-
-import { usersService } from '@/api/users.service';
-import { KeyDataType, User } from '@/ts';
 
 import {
   KeyDataItemProps,
@@ -14,26 +7,12 @@ import {
   WidgetAverageSession,
   WidgetPerformance,
   WidgetTodayScore,
-} from '../common';
-import { Layout } from '../layout';
+} from '@/components/common';
+import { Layout } from '@/components/layout';
 
-export const DashboardTemplate = () => {
-  const [user, setUser] = useState<User | undefined>(undefined);
+import { KeyDataType, User } from '@/ts';
 
-  const fetchUser = useCallback(async () => {
-    try {
-      const data = await usersService.getById();
-
-      setUser(data);
-    } catch (e) {
-      console.error('FetchUser: ', e);
-    }
-  }, []);
-
-  useEffect(() => {
-    fetchUser();
-  }, [fetchUser]);
-
+export const DashboardTemplate = ({ user }: { user: User }) => {
   const getContent = (
     property: keyof KeyDataType,
     value: number
@@ -72,12 +51,6 @@ export const DashboardTemplate = () => {
           subtitle: 'Lipides',
           color: 'pink',
         };
-
-      default:
-        return {
-          title: '',
-          subtitle: '',
-        };
     }
   };
 
@@ -100,7 +73,7 @@ export const DashboardTemplate = () => {
   return (
     <Layout>
       <h1 className='dashboard__title'>
-        Bonjour&nbsp;<span>{user && user.userInfos.firstName}</span>
+        Bonjour&nbsp;<span>{user.userInfos.firstName}</span>
       </h1>
       <p className='dashboard__subtitle'>
         Félicitation ! Vous avez explosé vos objectifs hier 👏
@@ -113,16 +86,12 @@ export const DashboardTemplate = () => {
           <div className='dashboard__row'>
             <WidgetAverageSession />
             <WidgetPerformance />
-            {user?.score && <WidgetTodayScore score={user.score} />}
+            <WidgetTodayScore score={user.score} />
           </div>
         </div>
 
         <div className='dashboard__right'>
-          {user?.keyData ? (
-            <ListKeyData items={formatKeyData(user.keyData)} />
-          ) : (
-            <p>pas de données pour l'instant</p>
-          )}
+          <ListKeyData items={formatKeyData(user.keyData)} />
         </div>
       </div>
     </Layout>
