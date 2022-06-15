@@ -1,6 +1,6 @@
 import { Activity, Average, Performance, User } from '@/ts';
 
-import api from './api';
+import api from '../api';
 
 const mockUserId = 18;
 
