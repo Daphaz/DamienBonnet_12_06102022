@@ -6,12 +6,15 @@ import {
   ResponsiveContainer,
 } from 'recharts';
 
+import { useWindowSize } from '@/hooks/useWindowSize';
+
 import { useGetUserPerformance } from '@/api/users/hooks';
 
-import { ErrorWidget, SpinnerWidget } from '../common';
 import { formatPerformanceData } from './helper';
+import { ErrorWidget, SpinnerWidget } from '../common';
 
 export const WidgetPerformance = () => {
+  const { width } = useWindowSize();
   const { response: performances, loading, error } = useGetUserPerformance();
 
   if (loading) {
@@ -32,7 +35,7 @@ export const WidgetPerformance = () => {
         className='widget-performance__chart'
       >
         <RadarChart
-          outerRadius={50}
+          outerRadius={width > 1340 ? 75 : 50}
           data={formatPerformanceData(performances)}
           margin={{ top: 0, left: 0, right: 0, bottom: 0 }}
         >
