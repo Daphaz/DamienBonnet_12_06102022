@@ -3,11 +3,15 @@ import { ReactNode } from 'react';
 import { Header } from './header';
 import { Sidebar } from './sidebar';
 
-interface Props {
+export interface LayoutProps {
   children: ReactNode;
 }
 
-export const Layout = ({ children }: Props) => {
+/**
+ *  This is the Layout component
+ * @category Layout
+ */
+export const Layout = ({ children }: LayoutProps) => {
   return (
     <>
       <Header />

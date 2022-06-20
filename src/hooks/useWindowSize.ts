@@ -1,10 +1,22 @@
 import { useEffect, useState } from 'react';
 
-interface WindowSize {
+/**
+ * @description This is the return interface of hook
+ */
+export interface WindowSize {
+  /**
+   *  width number of the viewport
+   */
   width: number;
+  /**
+   *  height number of the viewport
+   */
   height: number;
 }
 
+/**
+ * @description This is a custom hook for get the window sizes
+ */
 export const useWindowSize = (): WindowSize => {
   const [windowSize, setWindowSize] = useState<WindowSize>({
     width: 0,

@@ -1,6 +1,11 @@
 import { Performance } from '@/ts';
 
-const getTranslateKindFr = (label: string): string => {
+/**
+ * A helper function for translate kind label in french
+ * @category Widget
+ * @subcategory helper
+ */
+export const getTranslateKindFr = (label: string): string => {
   switch (label) {
     case 'cardio':
       return 'Cardio';
@@ -20,6 +25,11 @@ const getTranslateKindFr = (label: string): string => {
   }
 };
 
+/**
+ * This is a format performance data component
+ * for the widget chart performance
+ * @category Widget
+ */
 export const formatPerformanceData = (performances: Performance) => {
   return performances.data
     .sort((a, b) => b.kind - a.kind)

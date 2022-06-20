@@ -1,13 +1,23 @@
 import { useCallback, useEffect, useState } from 'react';
 
-import { formatError } from '@/lib/utils';
+import { formatError } from '@/lib';
 
+/**
+ * @description This is a custom hook for API management
+ * we provide a statement of the request:
+ * - loading
+ * - error custom message
+ * - response
+ */
 export const useApi = <T>({
   service,
   errorMessage = 'Une erreur est survenue, veuillez contactez un administrateur',
   name,
 }: {
   service: () => Promise<T>;
+  /**
+   * @default "Une erreur est survenue, veuillez contactez un administrateur"
+   */
   errorMessage?: string;
   name: string;
 }) => {

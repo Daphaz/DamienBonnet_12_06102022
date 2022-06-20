@@ -46,3 +46,6 @@ public/*
 # config
 src/react-app-env.d.ts
 tsconfig.json
+
+# genreated files
+docs/*

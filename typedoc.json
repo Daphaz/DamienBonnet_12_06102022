@@ -1,0 +1,11 @@
+{
+  "entryPoints": [
+    "src/ts/index.ts",
+    "src/pages/index.ts",
+    "src/lib/index.ts",
+    "src/hooks/index.ts",
+    "src/api",
+    "src/components/index.ts"
+  ],
+  "out": "docs"
+}

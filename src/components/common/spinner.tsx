@@ -1,9 +1,19 @@
-type Props = {
+export type SpinnerProps = {
+  /**
+   * width of svg
+   */
   width?: number;
+  /**
+   * height of svg
+   */
   height?: number;
 };
 
-export const Spinner = ({ width = 50, height = 50 }: Props) => {
+/**
+ * This is the spinner component for loading state
+ * @category Common
+ */
+export const Spinner = ({ width = 50, height = 50 }: SpinnerProps) => {
   return (
     <div className='spinner'>
       <svg className='spinner__spin' viewBox={`0 0 ${width} ${height}`}>

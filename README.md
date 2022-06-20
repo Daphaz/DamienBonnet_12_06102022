@@ -16,6 +16,8 @@ nvm use
 
 ## Launch the project
 
+**Don't forget to install and laung the [sportSee api](https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard)**
+
 - clone this repo
 - The `npm i` command install the dependencies.
 - The `npm start` command will allow you to run thi application.

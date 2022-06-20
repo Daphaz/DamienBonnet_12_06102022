@@ -1,3 +1,7 @@
+/**
+ * This is the header component for layout
+ * @category Layout
+ */
 export const Header = () => {
   return (
     <header className='header'>

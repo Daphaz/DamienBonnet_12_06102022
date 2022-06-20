@@ -14,6 +14,10 @@ import { LabelLegendList } from './label-legend';
 import { ErrorWidget, SpinnerWidget } from '../common';
 import { CustomTooltip } from '../tooltip';
 
+/**
+ * Tis is the widget chart Avtivity
+ * @category Widget
+ */
 export const WidgetActivity = () => {
   const { response: activity, error, loading } = useGetUserActivity();
 

@@ -1,9 +1,9 @@
-interface LabelLegendProps {
+export interface LabelLegendProps {
   color: 'black' | 'primary';
   label: string;
 }
 
-interface LabelsMockData extends LabelLegendProps {
+export interface LabelsMockData extends LabelLegendProps {
   id: string;
 }
 
@@ -20,13 +20,21 @@ const labels: LabelsMockData[] = [
   },
 ];
 
-const LabelLegendItem = ({ color, label }: LabelLegendProps) => (
+/**
+ * This is the label legend item for activity widget
+ * @category Widgets
+ */
+export const LabelLegendItem = ({ color, label }: LabelLegendProps) => (
   <li className='widget-activity__listItem'>
     <div className={`circle ${color}`} />
     <span>{label}</span>
   </li>
 );
 
+/**
+ * A label legend list of activities
+ * @category Widget
+ */
 export const LabelLegendList = () => (
   <ul className='widget-activity__list'>
     {labels.map(({ id, ...rest }) => (

@@ -4,10 +4,14 @@ import {
   ValueType,
 } from 'recharts/types/component/DefaultTooltipContent';
 
-interface CustomTooltipProps extends TooltipProps<ValueType, NameType> {
+export interface CustomTooltipProps extends TooltipProps<ValueType, NameType> {
   type: 'activity' | 'average';
 }
 
+/**
+ * This is a custom tooltip for all chart who needed
+ * @category Widget
+ */
 export const CustomTooltip = ({
   active,
   payload,

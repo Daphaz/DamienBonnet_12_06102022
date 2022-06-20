@@ -1,17 +1,27 @@
 import { Spinner } from '@/components/common';
 
-type Props = {
+export type SpinnerWidgetProps = {
   className: string;
 };
 
-type ErrorProps = Props & { error: string };
+export type ErrorProps = SpinnerWidgetProps & { error: string };
 
-export const SpinnerWidget = ({ className }: Props) => (
+/**
+ * This is the common spinner widget component
+ * @category Widget
+ * @subcategory common
+ */
+export const SpinnerWidget = ({ className }: SpinnerWidgetProps) => (
   <div className={className}>
     <Spinner />
   </div>
 );
 
+/**
+ * This is the common handle error widget component
+ * @category Widget
+ * @subcategory common
+ */
 export const ErrorWidget = ({ className, error }: ErrorProps) => (
   <div className={className}>
     <p className={`${className}__error`}>{error}</p>

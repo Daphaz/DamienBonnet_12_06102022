@@ -12,6 +12,10 @@ import { useGetUserAverageSession } from '@/api/users/hooks';
 import { ErrorWidget, SpinnerWidget } from '../common';
 import { CustomTooltip } from '../tooltip';
 
+/**
+ * This is the widget chart average session
+ * @category Widget
+ */
 export const WidgetAverageSession = () => {
   const {
     response: averageSessions,

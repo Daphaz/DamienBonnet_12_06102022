@@ -29,7 +29,8 @@
     "lint:fix": "eslint src --fix && npm run format",
     "typecheck": "tsc --noEmit --incremental false",
     "format": "prettier -w .",
-    "format:check": "prettier -c ."
+    "format:check": "prettier -c .",
+    "build:docs": "typedoc --tsconfig ./tsconfig.json"
   },
   "browserslist": {
     "production": [
@@ -49,6 +50,7 @@
     "eslint-plugin-simple-import-sort": "^7.0.0",
     "eslint-plugin-unused-imports": "^2.0.0",
     "prettier": "^2.6.2",
-    "sass": "^1.52.3"
+    "sass": "^1.52.3",
+    "typedoc": "^0.22.17"
   }
 }

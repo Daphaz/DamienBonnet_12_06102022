@@ -1,4 +1,4 @@
-import { useApi } from '@/hooks/useApi';
+import { useApi } from '@/hooks';
 
 import { Activity, Average, Performance, User } from '@/ts';
 

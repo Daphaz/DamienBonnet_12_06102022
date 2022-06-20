@@ -6,13 +6,17 @@ import {
   ResponsiveContainer,
 } from 'recharts';
 
-import { useWindowSize } from '@/hooks/useWindowSize';
+import { useWindowSize } from '@/hooks';
 
 import { useGetUserPerformance } from '@/api/users/hooks';
 
 import { formatPerformanceData } from './helper';
 import { ErrorWidget, SpinnerWidget } from '../common';
 
+/**
+ * This is the widget chart performance
+ * @category Widget
+ */
 export const WidgetPerformance = () => {
   const { width } = useWindowSize();
   const { response: performances, loading, error } = useGetUserPerformance();

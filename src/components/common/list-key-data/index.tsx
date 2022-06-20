@@ -6,11 +6,15 @@ export type KeyDataItemProps = {
   subtitle: string;
 };
 
-type ListKeyDataProps = {
+export type ListKeyDataProps = {
   items: KeyDataItemProps[];
 };
 
-const KeyDataItem = ({
+/**
+ * This is the key data item component
+ * @category Widget
+ */
+export const KeyDataItem = ({
   color = 'primary',
   name,
   iconSrc,
@@ -31,6 +35,10 @@ const KeyDataItem = ({
   </li>
 );
 
+/**
+ * This is the list key data component
+ * @category Widget
+ */
 export const ListKeyData = ({ items }: ListKeyDataProps): JSX.Element => {
   return (
     <ul className='list-key-data'>

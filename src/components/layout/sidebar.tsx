@@ -1,3 +1,7 @@
+/**
+ * This is the Sidebar component for layout
+ * @category Layout
+ */
 export const Sidebar = () => {
   return (
     <aside className='sidebar'>

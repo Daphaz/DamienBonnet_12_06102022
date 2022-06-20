@@ -1,9 +1,14 @@
 import { Cell, Pie, PieChart, ResponsiveContainer } from 'recharts';
 
-interface TodayScoreProps {
+export interface TodayScoreProps {
   score: number;
 }
 
+/**
+ * This is the widget chart score component
+ * @category Widget
+ * @subcategory chart
+ */
 export const WidgetTodayScore = ({ score }: TodayScoreProps) => {
   return (
     <div className='widget-today-score'>
