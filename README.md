@@ -21,3 +21,8 @@ nvm use
 - clone this repo
 - The `npm i` command install the dependencies.
 - The `npm start` command will allow you to run thi application.
+
+## Technical Documention
+> You can see all the documentation in github pages
+
+**[Docs](https://daphaz.github.io/DamienBonnet_12_06102022/)**
