@@ -1,5 +1,7 @@
 .header {
   @extend %between;
+  position: sticky;
+  top: 0;
   height: 91px;
   width: 100%;
   padding: 20px 30px;

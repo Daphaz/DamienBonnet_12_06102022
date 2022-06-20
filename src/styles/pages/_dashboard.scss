@@ -26,7 +26,6 @@
 
   &__left {
     flex-grow: 1;
-    min-width: 580px;
   }
 
   &__row {
@@ -47,5 +46,6 @@
   &__right {
     width: 100%;
     max-width: 258px;
+    height: 100%;
   }
 }
